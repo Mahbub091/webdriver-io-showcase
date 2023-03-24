@@ -1,16 +1,17 @@
-exports.config = {
+export const config = {
     //
     // ====================
     // Runner Configuration
     // ====================
-    //
-    port: 4723,
+    // WebdriverIO supports running e2e tests as well as unit and component tests.
+    runner: 'local',
+    
     //
     // ==================
     // Specify Test Files
     // ==================
     // Define which test specs should run. The pattern is relative to the directory
-    // from which `wdio` was called.
+    // of the configuration file being run.
     //
     // The specs are defined as an array of spec files (optionally using wildcards
     // that will be expanded). The test for each spec file will be run in a separate
@@ -26,10 +27,13 @@ exports.config = {
     ],
     //Suite configuration
     suites: {
-        ui: [
-            './test/specs/ui/*.js'
+        end2end: [
+          './test/e2e/**/*.js',
+        ],
+        other: [
+          // ...
         ]
-    },
+      },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -117,7 +121,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver','geckodriver','edgedriver'],
+    services: ['chromedriver'],
     
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
@@ -125,7 +129,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'mocha', 
+    framework: 'mocha',
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,

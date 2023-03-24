@@ -9,10 +9,6 @@ export default class Page {
     * @param homePage
     */
     open (path) {
-        return browser.url(`https://automationexercise.com/${path}`)
-    }
-
-    openNew (homePage) {
-        return browser.url(`https://automationexercise.com/${homePage}`)
+        return browser.url(`https://ecommerce-playground.lambdatest.io/${path}`)
     }
 }
