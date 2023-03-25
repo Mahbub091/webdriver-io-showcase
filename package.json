@@ -19,8 +19,8 @@
     "wdio": "wdio run ./wdio.conf.js",
     "e2e:script": "wdio ./wdio.conf.js --suite end2end",
     "allure:result": "npx allure generate --clean allure-results && npx allure open",
-    "clean:results": "if exist allure-results rmdir /s/q allure-results && mkdir allure-results",
-    "pretest": "npm run clean:results",
+    "clean:result": "if exist allure-results rmdir /s/q allure-results && mkdir allure-results",
+    "pretest": "npm run clean:result",
     "posttest": "npm run allure:result",
     "test": "npm run e2e:script || npm run posttest"
   },

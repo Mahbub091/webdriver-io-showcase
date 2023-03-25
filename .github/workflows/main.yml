@@ -10,17 +10,12 @@ jobs:
     steps:
       - name: Install Chromiun
         run: sudo apt-get install chromium-browser
-      - uses: actions/checkout@v2.7.0
+      - uses: actions/checkout@v2
       - name: Use Node.js
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 18.x
       - run: npm install
         name: Install dependencies
-      - run: npm run test
+      - run: npm run e2e
         name: Running E2E tests
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: logs
-          path: logs
