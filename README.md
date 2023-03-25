@@ -24,5 +24,5 @@ Test automation for Webdriver IO
 - ➡ Now open `Terminal` from your IDE. I'm using `VS Code`
 - ➡ Run the following commands on the `Terminal` to run the existing tests
 -                   💠 npm install (Will Install All The Dependencies)
--                   💠 npm run e2e (will execute the End to End Suite)
+-                   💠 npm run test (will execute the End to End Suite)
 -                   💠 npm run wdio (Will execute the Test Runner)
