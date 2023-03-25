@@ -17,10 +17,5 @@ jobs:
           node-version: 18.x
       - run: npm install
         name: Install dependencies
-      - run: npm run test
+      - run: npm run e2e:script
         name: Running E2E tests
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: logs
-          path: logs
