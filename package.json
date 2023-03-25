@@ -20,8 +20,7 @@
     "e2e:script": "wdio ./wdio.conf.js --suite end2end",
     "allure:result": "npx allure generate --clean allure-results && npx allure open",
     "clean:results": "if exist allure-results rmdir /s/q allure-results && mkdir allure-results",
-    "clean:report": "if exist allure-report rmdir /s/q allure-report && mkdir allure-report",
-    "pretest": "npm run clean:results && npm run clean:report",
+    "pretest": "npm run clean:results",
     "posttest": "npm run allure:result",
     "test": "npm run e2e:script || npm run posttest"
   },
